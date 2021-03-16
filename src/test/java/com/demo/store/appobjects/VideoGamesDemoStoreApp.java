@@ -15,4 +15,10 @@ public class VideoGamesDemoStoreApp {
     public WebElement batmanArkhamCityX360CEButton(){
         return driver.findElement(By.id("det_img_96"));
     }
+    public WebElement batmanArkhamCityX360CETextLabel(){
+        return driver.findElement(By.cssSelector(".ty-product-block-title"));
+    }
+    public WebElement batmanArkhamCityValueTextLabel(){
+        return driver.findElement(By.id("sec_discounted_price_96"));
+    }
 }
