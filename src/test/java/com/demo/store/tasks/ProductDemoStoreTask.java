@@ -1,9 +1,12 @@
 package com.demo.store.tasks;
 
+import com.aventstack.extentreports.Status;
 import com.demo.store.appobjects.IndexDemoStoreApp;
 import com.demo.store.appobjects.VideoGamesDemoStoreApp;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.WebDriver;
+
+import static com.demo.store.frameworks.tools.Report.extentTest;
 
 public class ProductDemoStoreTask {
 
@@ -21,6 +24,8 @@ public class ProductDemoStoreTask {
         indexDemoStoreApp.abaVideoGamesButton().click();
         videoGamesDemoStoreApp.batmanArkhamCityX360CEButton().click();
         Assertions.assertEquals("Batman: Arkham City (X360) CE", videoGamesDemoStoreApp.batmanArkhamCityX360CETextLabel().getText());
+        extentTest.log(Status.PASS, "Validou nome do produto está correto");
         Assertions.assertEquals("99.99", videoGamesDemoStoreApp.batmanArkhamCityValueTextLabel().getText());
+        extentTest.log(Status.PASS, "Validou valor do produto está correto");
     }
 }
