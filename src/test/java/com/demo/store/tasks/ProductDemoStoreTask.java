@@ -2,6 +2,7 @@ package com.demo.store.tasks;
 
 import com.demo.store.appobjects.IndexDemoStoreApp;
 import com.demo.store.appobjects.VideoGamesDemoStoreApp;
+import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.WebDriver;
 
 public class ProductDemoStoreTask {
@@ -19,6 +20,7 @@ public class ProductDemoStoreTask {
     public void escolheDoisJogos(){
         indexDemoStoreApp.abaVideoGamesButton().click();
         videoGamesDemoStoreApp.batmanArkhamCityX360CEButton().click();
-
+        Assertions.assertEquals("Batman: Arkham City (X360) CE", videoGamesDemoStoreApp.batmanArkhamCityX360CETextLabel().getText());
+        Assertions.assertEquals("99.99", videoGamesDemoStoreApp.batmanArkhamCityValueTextLabel().getText());
     }
 }
