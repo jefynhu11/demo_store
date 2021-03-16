@@ -8,9 +8,9 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class DriverFactory {
 
-    public WebDriver driver;
+    public static WebDriver driver;
 
-    public WebDriver createBrowser ( Browser tipos) {
+    public static WebDriver createBrowser ( Browser tipos) {
         switch (tipos) {
             case CHROME:
                 WebDriverManager.chromedriver().setup();
