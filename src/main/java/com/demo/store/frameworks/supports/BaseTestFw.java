@@ -9,14 +9,14 @@ import org.junit.jupiter.api.BeforeAll;
 public class BaseTestFw extends DriverFactory {
 
     @BeforeAll
-    public void setUp() {
+    public static void setUp() {
         driver = createBrowser(Browser.CHROME);
         DriverManager.setDriver(driver);
         DriverManager.getDriver();
     }
 
     @AfterAll
-    public void tearDown() {
+    public static void tearDown() {
         DriverManager.closeDriver();
     }
 
