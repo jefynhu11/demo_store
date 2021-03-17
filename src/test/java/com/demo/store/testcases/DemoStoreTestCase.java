@@ -16,7 +16,7 @@ public class DemoStoreTestCase extends BaseTestFw {
     private final ProductDemoStoreTask productDemoStoreTask = new ProductDemoStoreTask(driver);
 
     @Test
-    public void aoRealizarComprasDoisJogos() {
+    public void aoRealizarComprasDoisJogos() throws InterruptedException {
         Report.createTest("Ao realizar comprar os dois jogos");
         DriverManager.getDriver().get("https://demo.cs-cart.com");
         extentTest.log(Status.INFO, "Abriu a navegador no DEMO STORE");
