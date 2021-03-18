@@ -19,8 +19,8 @@ public class CheckoutDemoStoreTask {
 
     public void registrandoComprando() {
         checkoutDemoStoreApp.countrySelect().selectByValue("BR");
-        checkoutDemoStoreApp.stateTextField().sendKeys("RS");
-        checkoutDemoStoreApp.cityTextField().sendKeys("Porto Alegre");
+        checkoutDemoStoreApp.stateTextField().sendKeys(fakers.getEstado());
+        checkoutDemoStoreApp.cityTextField().sendKeys(fakers.getCidade());
         checkoutDemoStoreApp.enderecoTextField().sendKeys(fakers.getEndereco());
         checkoutDemoStoreApp.cepTextField().clear();
         checkoutDemoStoreApp.cepTextField().sendKeys(fakers.getCep());
