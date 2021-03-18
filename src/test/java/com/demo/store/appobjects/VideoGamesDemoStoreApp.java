@@ -8,9 +8,11 @@ import org.openqa.selenium.WebElement;
 public class VideoGamesDemoStoreApp {
 
     private final WebDriver driver;
+    private final Wait wait;
 
     public VideoGamesDemoStoreApp(WebDriver driver){
         this.driver = driver;
+        wait = new Wait(driver);
     }
 
     public WebElement batmanArkhamCityX360CEButton(){
@@ -26,6 +28,7 @@ public class VideoGamesDemoStoreApp {
         return driver.findElement(By.id("button_cart_96"));
     }
     public WebElement continuaComprarButton(){
+        wait.waitElementToBeClickable(By.cssSelector("div > div > div.ty-product-notification__buttons.clearfix > div.ty-float-left > a"));
         return driver.findElement(By.cssSelector("div > div > div.ty-product-notification__buttons.clearfix > div.ty-float-left > a"));
     }
     public WebElement fear3PS3MXButton(){
@@ -41,6 +44,7 @@ public class VideoGamesDemoStoreApp {
         return driver.findElement(By.id("button_cart_90"));
     }
     public WebElement checkoutButton(){
+        wait.waitElementToBeClickable(By.cssSelector("div > div > div.ty-product-notification__buttons.clearfix > div.ty-float-right > a"));
         return driver.findElement(By.cssSelector("div > div > div.ty-product-notification__buttons.clearfix > div.ty-float-right > a"));
     }
 }
