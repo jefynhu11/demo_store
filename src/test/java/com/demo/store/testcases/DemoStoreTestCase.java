@@ -4,6 +4,7 @@ import com.aventstack.extentreports.Status;
 import com.demo.store.frameworks.supports.BaseTestFw;
 import com.demo.store.frameworks.tools.Report;
 import com.demo.store.frameworks.tools.Screenshot;
+import com.demo.store.frameworks.utils.FileOperationsAndProperties;
 import com.demo.store.frameworks.webdrivers.DriverManager;
 import com.demo.store.tasks.CheckoutDemoStoreTask;
 import com.demo.store.tasks.ProductDemoStoreTask;
@@ -21,7 +22,7 @@ public class DemoStoreTestCase extends BaseTestFw {
     @Test
     public void aoRealizarComprasDoisJogos() {
         Report.createTest("Ao realizar comprar os dois jogos");
-        DriverManager.getDriver().get("https://demo.cs-cart.com");
+        DriverManager.getDriver().get(FileOperationsAndProperties.getPropertiesData("url", "demoStore"));
         extentTest.log(Status.INFO, "Abriu a navegador no DEMO STORE", Screenshot.screenshotBase64(driver));
         productDemoStoreTask.escolheDoisJogos();
         checkoutDemoStoreTask.registrandoComprando();
