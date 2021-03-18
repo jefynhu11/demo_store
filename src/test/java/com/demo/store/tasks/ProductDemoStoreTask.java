@@ -27,8 +27,6 @@ public class ProductDemoStoreTask {
         validarBatman();
         ((JavascriptExecutor)driver).executeScript("scroll(0,300)");
         videoGamesDemoStoreApp.batmanArkhamAdicionarAoCarrinhoButton().click();
-//        Wait.waitLoadElement(videoGamesDemoStoreApp.continuaComprarButton());
-        Thread.sleep(3000);
         videoGamesDemoStoreApp.continuaComprarButton().click();
 
         indexDemoStoreApp.abaVideoGamesButton().click();
@@ -36,7 +34,6 @@ public class ProductDemoStoreTask {
         validarFear3();
         ((JavascriptExecutor)driver).executeScript("scroll(0,300)");
         videoGamesDemoStoreApp.fear3PS3MXAdicionarAoCarrinhoButton().click();
-        Thread.sleep(3000);
         videoGamesDemoStoreApp.checkoutButton().click();
     }
 
