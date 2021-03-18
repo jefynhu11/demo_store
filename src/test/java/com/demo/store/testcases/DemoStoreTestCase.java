@@ -4,6 +4,7 @@ import com.aventstack.extentreports.Status;
 import com.demo.store.frameworks.supports.BaseTestFw;
 import com.demo.store.frameworks.tools.Report;
 import com.demo.store.frameworks.webdrivers.DriverManager;
+import com.demo.store.tasks.CheckoutDemoStoreTask;
 import com.demo.store.tasks.ProductDemoStoreTask;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
@@ -14,6 +15,7 @@ public class DemoStoreTestCase extends BaseTestFw {
 
     private final WebDriver driver = DriverManager.getDriver();
     private final ProductDemoStoreTask productDemoStoreTask = new ProductDemoStoreTask(driver);
+    private final CheckoutDemoStoreTask checkoutDemoStoreTask = new CheckoutDemoStoreTask(driver);
 
     @Test
     public void aoRealizarComprasDoisJogos() throws InterruptedException {
@@ -21,5 +23,6 @@ public class DemoStoreTestCase extends BaseTestFw {
         DriverManager.getDriver().get("https://demo.cs-cart.com");
         extentTest.log(Status.INFO, "Abriu a navegador no DEMO STORE");
         productDemoStoreTask.escolheDoisJogos();
+        checkoutDemoStoreTask.registrandoComprando();
     }
 }
