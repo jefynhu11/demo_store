@@ -41,8 +41,8 @@ public class ProductDemoStoreTask {
 
     private void validarBatman() {
         try {
-            Assertions.assertEquals("Batman: Arkham City (X360) CE", videoGamesDemoStoreApp.batmanArkhamCityX360CETextLabel().getText());
             JsExecutor.highLightElement(driver, videoGamesDemoStoreApp.batmanArkhamCityX360CETextLabel());
+            Assertions.assertEquals("Batman: Arkham City (X260) CE", videoGamesDemoStoreApp.batmanArkhamCityX360CETextLabel().getText());
             extentTest.log(Status.PASS, "Validou nome do produto está correto: " + videoGamesDemoStoreApp.batmanArkhamCityX360CETextLabel().getText(), Screenshot.screenshotBase64(driver));
             JsExecutor.highLightRemove(driver, videoGamesDemoStoreApp.batmanArkhamCityX360CETextLabel());
         } catch (AssertionError error) {
