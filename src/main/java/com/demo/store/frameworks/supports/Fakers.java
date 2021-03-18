@@ -2,20 +2,33 @@ package com.demo.store.frameworks.supports;
 
 import com.github.javafaker.Faker;
 
+import java.util.Locale;
+
 public class Fakers {
 
     private Faker faker = new Faker();
-    private String endereco, cep,
+    private Faker fakerBr = new Faker(new Locale("pt-BR"));
+    private String cidade, estado, endereco, cep,
     telefone, email,
     numeroCartao, cvc;
-    String nomeCompleto = faker.name().fullName();
+    String nomeCompleto = fakerBr.name().fullName();
 
     public Fakers(){
 
     }
 
+    public String getCidade(){
+        cidade = fakerBr.address().cityName();
+        return cidade;
+    }
+
+    public String getEstado(){
+        estado = fakerBr.address().state();
+        return estado;
+    }
+
     public String getEndereco(){
-        endereco = faker.address().streetAddress();
+        endereco = fakerBr.address().streetAddress();
         return endereco;
     }
     public String getCep(){
@@ -30,7 +43,7 @@ public class Fakers {
         return telefone;
     }
     public String getEmail(){
-        email = faker.internet().emailAddress();
+        email = fakerBr.internet().emailAddress();
         return email;
     }
     public String getNumeroCartao(){
