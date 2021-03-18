@@ -23,7 +23,7 @@ public class ProductDemoStoreTask {
         videoGamesDemoStoreApp = new VideoGamesDemoStoreApp(driver);
     }
 
-    public void escolheDoisJogos() throws InterruptedException {
+    public void escolheDoisJogos() {
         indexDemoStoreApp.abaVideoGamesButton().click();
         videoGamesDemoStoreApp.batmanArkhamCityX360CEButton().click();
         validarBatman();
@@ -40,25 +40,41 @@ public class ProductDemoStoreTask {
     }
 
     private void validarBatman() {
-        JsExecutor.highLightElement(driver, videoGamesDemoStoreApp.batmanArkhamCityX360CETextLabel());
-        Assertions.assertEquals("Batman: Arkham City (X360) CE", videoGamesDemoStoreApp.batmanArkhamCityX360CETextLabel().getText());
-        extentTest.log(Status.PASS, "Validou nome do produto está correto: " + videoGamesDemoStoreApp.batmanArkhamCityX360CETextLabel().getText(), Screenshot.screenshotBase64(driver));
-        JsExecutor.highLightRemove(driver, videoGamesDemoStoreApp.batmanArkhamCityX360CETextLabel());
-        JsExecutor.highLightElement(driver, videoGamesDemoStoreApp.batmanArkhamCityValueTextLabel());
-        Assertions.assertEquals("99.99", videoGamesDemoStoreApp.batmanArkhamCityValueTextLabel().getText());
-        extentTest.log(Status.PASS, "Validou valor do produto está correto: " + videoGamesDemoStoreApp.batmanArkhamCityValueTextLabel().getText(), Screenshot.screenshotBase64(driver));
-        JsExecutor.highLightRemove(driver, videoGamesDemoStoreApp.batmanArkhamCityValueTextLabel());
+        try {
+            Assertions.assertEquals("Batman: Arkham City (X360) CE", videoGamesDemoStoreApp.batmanArkhamCityX360CETextLabel().getText());
+            JsExecutor.highLightElement(driver, videoGamesDemoStoreApp.batmanArkhamCityX360CETextLabel());
+            extentTest.log(Status.PASS, "Validou nome do produto está correto: " + videoGamesDemoStoreApp.batmanArkhamCityX360CETextLabel().getText(), Screenshot.screenshotBase64(driver));
+            JsExecutor.highLightRemove(driver, videoGamesDemoStoreApp.batmanArkhamCityX360CETextLabel());
+        } catch (AssertionError error) {
+            extentTest.log(Status.FAIL, error, Screenshot.screenshotBase64(driver));
+        }
+        try {
+            JsExecutor.highLightElement(driver, videoGamesDemoStoreApp.batmanArkhamCityValueTextLabel());
+            Assertions.assertEquals("99.99", videoGamesDemoStoreApp.batmanArkhamCityValueTextLabel().getText());
+            extentTest.log(Status.PASS, "Validou valor do produto está correto: " + videoGamesDemoStoreApp.batmanArkhamCityValueTextLabel().getText(), Screenshot.screenshotBase64(driver));
+            JsExecutor.highLightRemove(driver, videoGamesDemoStoreApp.batmanArkhamCityValueTextLabel());
+        } catch (AssertionError error) {
+            extentTest.log(Status.FAIL, error, Screenshot.screenshotBase64(driver));
+        }
     }
 
     private void validarFear3() {
-        JsExecutor.highLightElement(driver, videoGamesDemoStoreApp.fear3PS3MXTextLabel());
-        Assertions.assertEquals("F.E.A.R. 3 (PS3) MX", videoGamesDemoStoreApp.fear3PS3MXTextLabel().getText());
-        extentTest.log(Status.PASS, "Validou nome do produto está correto: " + videoGamesDemoStoreApp.fear3PS3MXTextLabel().getText(), Screenshot.screenshotBase64(driver));
-        JsExecutor.highLightRemove(driver, videoGamesDemoStoreApp.fear3PS3MXTextLabel());
-        JsExecutor.highLightElement(driver, videoGamesDemoStoreApp.fear3PS3MXValueTextLabel());
-        Assertions.assertEquals("19.99", videoGamesDemoStoreApp.fear3PS3MXValueTextLabel().getText());
-        extentTest.log(Status.PASS, "Validou valor do produto está correto: " + videoGamesDemoStoreApp.fear3PS3MXValueTextLabel().getText(), Screenshot.screenshotBase64(driver));
-        JsExecutor.highLightRemove(driver, videoGamesDemoStoreApp.fear3PS3MXValueTextLabel());
+        try {
+            JsExecutor.highLightElement(driver, videoGamesDemoStoreApp.fear3PS3MXTextLabel());
+            Assertions.assertEquals("F.E.A.R. 3 (PS3) MX", videoGamesDemoStoreApp.fear3PS3MXTextLabel().getText());
+            extentTest.log(Status.PASS, "Validou nome do produto está correto: " + videoGamesDemoStoreApp.fear3PS3MXTextLabel().getText(), Screenshot.screenshotBase64(driver));
+            JsExecutor.highLightRemove(driver, videoGamesDemoStoreApp.fear3PS3MXTextLabel());
+        } catch (AssertionError error) {
+            extentTest.log(Status.FAIL, error, Screenshot.screenshotBase64(driver));
+        }
+        try {
+            JsExecutor.highLightElement(driver, videoGamesDemoStoreApp.fear3PS3MXValueTextLabel());
+            Assertions.assertEquals("19.99", videoGamesDemoStoreApp.fear3PS3MXValueTextLabel().getText());
+            extentTest.log(Status.PASS, "Validou valor do produto está correto: " + videoGamesDemoStoreApp.fear3PS3MXValueTextLabel().getText(), Screenshot.screenshotBase64(driver));
+            JsExecutor.highLightRemove(driver, videoGamesDemoStoreApp.fear3PS3MXValueTextLabel());
+        } catch (AssertionError error) {
+            extentTest.log(Status.FAIL, error, Screenshot.screenshotBase64(driver));
+        }
     }
 }
 ;
