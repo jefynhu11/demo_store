@@ -1,0 +1,15 @@
+CENÁRIO 1: Deve realizar de comprar dois jogos
+Dado: Acessa URI https://demo.cs-cart.com/
+Quando: Clica menu aba 'VIDEO GAMES'
+E: Escolhe um jogo 'Batman: Arkham City (X360) CE'
+E: Validação nome do produto e valor
+E: Clica 'Adicionar ao carrinho'
+E: Clica 'Continuar compras'
+E: Clica menu aba 'VIDEO GAMES'
+E: Escolhe um jogo 'F.E.A.R 3 (PS3) MX'
+E: Validação nome do produto e valor
+E: Clica 'Adicionar ao carrinho'
+E: Clica 'Checkout'
+Quando: Aparece dados para registar
+E: Preenche alguns no campos com obrigatório
+Então: Deve ser exibir pedido com sucesso
