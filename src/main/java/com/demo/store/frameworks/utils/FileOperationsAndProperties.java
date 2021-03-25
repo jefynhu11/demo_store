@@ -37,7 +37,7 @@ public class FileOperationsAndProperties {
 
     public static String getPropertiesData(String fileName, String property){
         try {
-            Properties properties = getProperties("Properties"+ File.separator + fileName +".properties");
+            Properties properties = getProperties("properties"+ File.separator + fileName +".properties");
             return properties.getProperty(property);
         } catch(Exception e){
             System.out.println("Não foi possível ler o arquivo"+e.getMessage());
