@@ -47,7 +47,7 @@ public class FileOperationsAndProperties {
 
     public static void setPropertiesData(String fileName,String propKey,String propValue){
         try {
-            setProperties("Properties"+ File.separator + fileName + ".properties",propKey,propValue);
+            setProperties("properties"+ File.separator + fileName + ".properties",propKey,propValue);
         } catch(Exception e){
             System.out.println("Não foi possível ler o arquivo"+e.getMessage());
         }
